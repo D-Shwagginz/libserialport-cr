@@ -1,19 +1,33 @@
 # libserialport-cr
 
-TODO: Write a description here
+A Crystal C-Binding library of [libserialport](https://sigrok.org/wiki/Libserialport)
+
+"libserialport (sometimes abbreviated as "sp") is a minimal, cross-platform shared library written in C that is intended to take care of the OS-specific details when writing software that uses serial ports."
 
 ## Installation
 
-TODO: Write installation instructions here
+### Windows
+
+1. Follow the instructions at https://github.com/neatorobito/scoop-crystal to add the crystal-preview bucket to scoop
+2. Install crystal with `scoop install crystal`
+3. Run `.\rsrc\install.ps1` in powershell
+4. Run in powershell
+```powershell
+$env:LIB="${env:LIB};C:\libserialport"
+$env:PATH="${env:PATH};C:\libserialport"
+```
+
+OR
+
+Run in cmd
+```cmd
+set PATH=%PATH%;C:\libserialport
+set LIB=%LIB%;C:\libserialport
+```
 
 ## Usage
 
-$env:LIB="${env:LIB};C:\libserialport"
-$env:PATH="${env:PATH};C:\libserialport"
-
-## Development
-
-TODO: Write development instructions here
+  For usage, see the 1 to 1 [example](https://github.com/D-Shwagginz/libserialport-cr/tree/master/examples) recreated from libserialport.
 
 ## Contributing
 
