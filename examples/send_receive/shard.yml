@@ -1,8 +1,12 @@
-name: libserialport-cr
+name: send_receive
 version: 0.1.0
 
 authors:
   - D. Shwagginz <93965353+D-Shwagginz@users.noreply.github.com>
+
+targets:
+  send_receive:
+    main: src/send_receive.cr
 
 crystal: 1.9.2
 

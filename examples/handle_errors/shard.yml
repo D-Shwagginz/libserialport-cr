@@ -1,8 +1,12 @@
-name: libserialport-cr
+name: handle_errors
 version: 0.1.0
 
 authors:
   - D. Shwagginz <93965353+D-Shwagginz@users.noreply.github.com>
+
+targets:
+  handle_errors:
+    main: src/handle_errors.cr
 
 crystal: 1.9.2
 

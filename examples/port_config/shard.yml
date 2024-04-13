@@ -1,8 +1,12 @@
-name: libserialport-cr
+name: port_config
 version: 0.1.0
 
 authors:
   - D. Shwagginz <93965353+D-Shwagginz@users.noreply.github.com>
+
+targets:
+  port_config:
+    main: src/port_config.cr
 
 crystal: 1.9.2
 
