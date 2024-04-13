@@ -27,7 +27,7 @@ set LIB=%LIB%;C:\libserialport
 
 ## Usage
 
-  For usage, see the 1 to 1 [example](https://github.com/D-Shwagginz/libserialport-cr/tree/master/examples) recreated from libserialport.
+  For usage, see the 1 to 1 [examples](https://github.com/D-Shwagginz/libserialport-cr/tree/master/examples) recreated from libserialport.
 
 ## Contributing
 
