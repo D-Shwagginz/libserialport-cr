@@ -3,7 +3,3 @@
 /bin/
 /.shards/
 *.dwarf
-/examples/*/bin/
-/examples/*/lib/
-/examples/*/.shards/
-/examples/_build/
