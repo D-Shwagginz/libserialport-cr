@@ -8,6 +8,10 @@ targets:
   send_receive:
     main: src/send_receive.cr
 
+dependencies:
+  libserialport-cr:
+    path: ../../
+
 crystal: 1.9.2
 
 license: MIT

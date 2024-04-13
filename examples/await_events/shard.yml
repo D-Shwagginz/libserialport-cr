@@ -8,6 +8,10 @@ targets:
   await_events:
     main: src/await_events.cr
 
+dependencies:
+  libserialport-cr:
+    path: ../../
+
 crystal: 1.9.2
 
 license: MIT

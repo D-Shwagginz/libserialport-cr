@@ -8,6 +8,10 @@ targets:
   list_ports:
     main: src/list_ports.cr
 
+dependencies:
+  libserialport-cr:
+    path: ../../
+
 crystal: 1.9.2
 
 license: MIT

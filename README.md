@@ -8,7 +8,8 @@ TODO: Write installation instructions here
 
 ## Usage
 
-TODO: Write usage instructions here
+$env:LIB="${env:LIB};C:\libserialport"
+$env:PATH="${env:PATH};C:\libserialport"
 
 ## Development
 
