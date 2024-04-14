@@ -6,6 +6,19 @@ A Crystal C-Binding library of [libserialport](https://sigrok.org/wiki/Libserial
 
 ## Installation
 
+### Linux
+
+1. Run
+```sh
+sudo sh ./rsrc/install.sh
+```
+2. Add `libserialport-cr` to your `shard.yml` dependencies like so:
+```yml
+dependencies:
+  libserialport-cr:
+    github: D-Shwagginz/libserialport-cr
+```
+
 ### Windows
 
 1. Follow the instructions at https://github.com/neatorobito/scoop-crystal to add the crystal-preview bucket to scoop
