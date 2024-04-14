@@ -8,6 +8,19 @@ jobs:
     steps:
       - name: Download source
         uses: actions/checkout@v2
+      - name: Install Crystal
+        run: |
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+          irm get.scoop.sh -outfile 'install.ps1'
+          .\install.ps1 -RunAsAdmin
+          echo ("PATH=" + $env:PATH + ";" + $home + "\scoop\shims") >> $env:GITHUB_ENV
+          scoop bucket add crystal-preview https://github.com/neatorobito/scoop-crystal
+          scoop install vs_2022_cpp_build_tools
+          scoop install crystal
+      - name: shards install
+        run: shards install
+      - name: Setup VS Dev Environment
+        uses: seanmiddleditch/gha-setup-vsdevenv@v4
       - name: Git libserialport-cr
         run: git clone https://github.com/D-Shwagginz/libserialport-cr.git
       - name: libserialport-cr install
