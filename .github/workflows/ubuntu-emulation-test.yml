@@ -1,0 +1,21 @@
+name: Ubuntu - Emulation Test
+on: [push, pull_request]
+jobs:
+  ubuntu-emulation-test:
+    name: Ubuntu - Emulation Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: oprypin/install-crystal@v1
+      - name: Install Crystal libs
+        run: shards install
+      - name: Git libserialport-cr
+        run: git clone https://github.com/D-Shwagginz/libserialport-cr.git
+      - name: libserialport-cr install
+        run: sudo sh ./libserialport-cr/rsrc/install.sh
+      - name: Start terminal emulation
+        run: sudo sh ./libserialport-cr/examples/linux_emulation_test/rsrc/terminal_emulation.sh
+      - name: Run linux_emulation_test
+        run: cd libserialport-cr/examples/linux_emulation_test && shards run

@@ -1,3 +1,9 @@
+
+[![Ubuntu Build](https://github.com/D-Shwagginz/libserialport-cr/actions/workflows/ubuntu-build.yml/badge.svg)](https://github.com/D-Shwagginz/libserialport-cr/actions/workflows/ubuntu-build.yml)
+[![Windows Build](https://github.com/D-Shwagginz/libserialport-cr/actions/workflows/windows-build.yml/badge.svg)](https://github.com/D-Shwagginz/libserialport-cr/actions/workflows/windows-build.yml)
+
+[![Ubuntu Emulation Test](https://github.com/D-Shwagginz/libserialport-cr/actions/workflows/ubuntu-emulation-test.yml/badge.svg)](https://github.com/D-Shwagginz/libserialport-cr/actions/workflows/ubuntu-emulation-test.yml)
+
 # libserialport-cr
 
 A Crystal C-Binding library of [libserialport](https://sigrok.org/wiki/Libserialport)

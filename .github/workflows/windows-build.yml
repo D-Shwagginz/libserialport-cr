@@ -40,3 +40,5 @@ jobs:
         run: cd libserialport-cr/examples/port_info && shards build
       - name: Build send_receive
         run: cd libserialport-cr/examples/send_receive && shards build
+      - name: Build linux_emulation_test
+        run: cd libserialport-cr/examples/linux_emulation_test && shards build
