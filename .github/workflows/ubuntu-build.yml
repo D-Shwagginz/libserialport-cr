@@ -1,0 +1,27 @@
+name: Ubuntu - Build
+on: [push, pull_request]
+jobs:
+  ubuntu-build:
+    name: Ubuntu - Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      - name: Install Crystal
+        uses: oprypin/install-crystal@v1
+      - name: Install Crystal libs
+        run: shards install
+      - name: libserialport-cr post-install
+        run: sh ./lib/libserialport-cr/rsrc/install.sh
+      - name: Build await_events
+        run: cd lib/libserialport-cr/examples/await_events && shards build
+      - name: Build handle_errors
+        run: cd ../handle_errors && shards build
+      - name: Build list_ports
+        run: cd ../list_ports && shards build
+      - name: Build port_config
+        run: cd ../port_config && shards build
+      - name: Build port_info
+        run: cd ../port_info && shards build
+      - name: Build send_receive
+        run: cd ../send_receive && shards build
