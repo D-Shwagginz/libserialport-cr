@@ -1,0 +1,42 @@
+name: Windows - Build
+on: [push, pull_request]
+
+jobs:
+  windows-build:
+    name: Windows - Build
+    runs-on: windows-latest
+    steps:
+      - name: Download source
+        uses: actions/checkout@v2
+      - name: Install Crystal
+        run: |
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+          irm get.scoop.sh -outfile 'install.ps1'
+          .\install.ps1 -RunAsAdmin
+          echo ("PATH=" + $env:PATH + ";" + $home + "\scoop\shims") >> $env:GITHUB_ENV
+          scoop bucket add crystal-preview https://github.com/neatorobito/scoop-crystal
+          scoop install vs_2022_cpp_build_tools
+          scoop install crystal
+      - name: shards install
+        run: shards install
+      - name: Setup VS Dev Environment
+        uses: seanmiddleditch/gha-setup-vsdevenv@v4
+      - name: Git libserialport-cr
+        run: git clone https://github.com/D-Shwagginz/libserialport-cr.git
+      - name: libserialport-cr install
+        run: |
+          powershell ./libserialport-cr/rsrc/install-lib.ps1
+          echo ("LIB=" + $env:LIB + ";" + $pwd + "\libs") >> $env:GITHUB_ENV
+          echo ("PATH=" + $env:PATH + ";" + $pwd + "\libs") >> $env:GITHUB_ENV
+      - name: Build await_events
+        run: cd libserialport-cr/examples/await_events && shards build
+      - name: Build handle_errors
+        run: cd libserialport-cr/examples/handle_errors && shards build
+      - name: Build list_ports
+        run: cd libserialport-cr/examples/list_ports && shards build
+      - name: Build port_config
+        run: cd libserialport-cr/examples/port_config && shards build
+      - name: Build port_info
+        run: cd libserialport-cr/examples/port_info && shards build
+      - name: Build send_receive
+        run: cd libserialport-cr/examples/send_receive && shards build
