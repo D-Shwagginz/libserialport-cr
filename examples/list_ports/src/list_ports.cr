@@ -14,9 +14,7 @@ puts "Getting port list.\n"
 # pointer will be updated to refer to the array created.
 ports_ptr = port_list.to_unsafe
 result = SP.list_ports(pointerof(ports_ptr))
-puts ports_ptr
 port_list = ports_ptr
-puts port_list
 
 if (result != SP::Return::Ok)
   print "SP.list_ports() failed!\n"
