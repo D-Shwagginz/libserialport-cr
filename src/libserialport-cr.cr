@@ -186,7 +186,20 @@ lib SerialPort
   end
 
   # An opaque type representing a serial port.
-  type Port = Void
+  #type Port = Void
+  struct Port 
+	name : LibC::Char*
+	description : LibC::Char*
+	transport : Transport
+	usb_bus : LibC::Int
+	usb_address : LibC::Int
+	usb_vid : LibC::Int
+	usb_pid : LibC::Int
+	usb_manufacturer : LibC::Char*
+	usb_product : LibC::Char*
+	usb_serial : LibC::Char*
+	bluetooth_address : LibC::Char*
+  end
 
   # An opaque type representing the configuration for a serial port.
   type PortConfig = Void
